@@ -99,5 +99,3 @@ As seen below, the environment is solved after 1170 episodes (average 100 episod
 1. This DDPG implementation was very dependent on hyperparameters, noise settings and random seed. Solving the environment using PPO, TRPO or D4PG might allow a more robust solution to this task.
 
 2. Solving the more challenging [SoccerTwos](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#soccer-twos) environment using edited versions of these same algorithms. This will also involve competitive as well as collaborative agents which lack in the Tennis environment.
-
-Thanks Daniel Barbosa for statistics reference
