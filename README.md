@@ -86,3 +86,9 @@ Todos:
 1. Add functions of loading weights and resume training;
 1. Add gif visualizing the performance of the trained model;
 
+## Instruction
+To train the model, simply adjust parameters in the `config.py` file, and then run
+```bash
+python run.py
+```
+
