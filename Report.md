@@ -5,23 +5,22 @@
 
 # Report - Deep RL Project: Collaboration and Competition
 
+This report is organized based on [Akhiad Bercovich](https://github.com/akhiadber/DeepRL-Tennis-Collab/blob/master/REPORT.md)'s work.
+
 ### Implementation Details
 
-The code for this project is ordered in 6 python files, and the demonstration training code and instructions in the notebook 'Tennis.ipynb'. 
+1. `config.py`: Configuration files for training the model;
+1. `model.py`: Actor and Critc Network classes;
+1. `ddpg_agent.py`: Agent, ReplayBuffer and OUNoise classes; The Agent class makes use of the Actor and Critic classes from `model.py`, the ReplayBuffer class and the OUNoise class;
+1. `multi_agents.py`: MultiAgent class defining multiple agents based on the `Agent` class;
+1. `run.py`: Script which will train the agent. Can be run directly from the terminal;
+1. `checkpoint_[01].actor.pth`: Contains the weights of successful Actor Networks;
+1. `checkpoint_[01].critic.pth`: Contains the weights of successful Critic Networks.
 
-1. 'model.py': Architecture and logic for the neural networks implementing the actor and critic for the chosen DDPG algorithm, as well as the DoubleAgent class which contains all agent's actors and crtics.
-
-2. 'agent.py': Implements the DDPG and MADDPG agent classes, which include the logic for the stepping, acting, learning and the buffer to hold the experience data on which to train the agent, on the single and multi agent level, and uses 'model.py' to generate the local and target networks for the actor and critic. 
-
-3. 'run.py': Main training loop or evalute loop logic.
-
-4. 'env.py': Wrapper around the Unity environment.
-
-5. 'stats.py': Statistics while training the agent, for printing and tensorboard.
-
-6. 'main.py': Main function for running in command line.
-
-7. 'Tennis.ipynb': Main training logic and usage instructions. Includes explainations about the environment, state and action space, goals and final results. The main training loop creates the agents and trains them using the MADDPG (details below) until satisfactory results. 
+To train the model, simply adjust parameters in the `config.py` file, and then run
+```bash
+python run.py
+```
 
 ### Learning Algorithm
 
@@ -56,24 +55,38 @@ References:
 
 Parameter | Value
 --- | ---
-replay buffer size | int(1e6)
-minibatch size | 256
+replay buffer size | int(1e5)
+minibatch size | 128
 discount factor | 0.99  
 tau (soft update) | 1e-3
-learning rate actor | 1e-3
-learning rate critic | 1e-3
+learning rate actor | 1e-4
+learning rate critic | 1e-4
 L2 weight decay | 0
-UPDATE_EVERY | 4
-NUM_UPDATES | 2
-NOISE | 1.0
-NOISE_DECAY | 1e-6
-NOISE_SIGMA | 0.2
+update frequency (episode) | 1
+numer of updates (per episode) | 4
 
 6. Network architecture:
     - Both the actor and critic are implemented using fully connected networks, with 2 hidden layers of 512 units each, batch normalization and Relu activation function, with Tanh activation at the last layer for the actors and one unit output for critics.
     - Input and output layers sizes are determined by the state and action space. Critics concatenate actions in 2nd fully-connected layer.
     - Training time until solving the environment takes around 17 minutes on AWS p2 instance with Tesla k80 GPU.
     - See 'model.py' for more details.
+    
+### Training screen output
+```bash
+Episode 100     Average Score: 0.02
+Episode 200     Average Score: 0.01
+Episode 300     Average Score: 0.04
+Episode 400     Average Score: 0.06
+Episode 500     Average Score: 0.10
+Episode 600     Average Score: 0.13
+Episode 700     Average Score: 0.17
+Episode 800     Average Score: 0.23
+Episode 900     Average Score: 0.28
+Episode 1000    Average Score: 0.31
+Episode 1100    Average Score: 0.39
+Episode 1175    Average Score: 0.50
+Environment solved in 1170 episodes!    Average Score: 0.50  
+```
 
 ### Plot of results
 
