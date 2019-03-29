@@ -2,7 +2,7 @@
 Udacity's Deep Reinforcement Learning Nanodegree Project 'Tennis': Training agents to play tennis.
 
 
-### Introduction
+## Introduction
 For this project, I trained a multi-agent DDPG model to solve the Unity [Tennis](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#tennis) environment.
 
 In this environment, two agents control rackets to bounce a ball over a net. If an agent hits the ball over the net, it receives a reward of +0.1. If an agent lets a ball hit the ground or hits the ball out of bounds, it receives a reward of -0.01. Thus, the goal of each agent is to keep the ball in play.
@@ -17,7 +17,7 @@ The task is episodic, and in order to solve the environment, our agents must get
 The environment is considered solved, when the average (over 100 episodes) of those scores is at least +0.5.
 
 
-### Getting Started
+## Getting Started
 
 To set up your python environment to run the code in this repository, follow the instructions below.
 
@@ -64,4 +64,22 @@ To set up your python environment to run the code in this repository, follow the
 
 7. If not working in AWS, change file_name in file main.py (row 18) to the correct path to the above env file.
 
-The code provided here was tested on an Ubuntu AWS headless (no visual) operating system, but should work for all above provided you follow the correct instructions.
+The code provided here was tested on an Ubuntu 16.04 headless (no visual) operating system, but should work for all above provided you follow the correct instructions.
+
+
+## Setup of repository
+Apart from the `Readme.md` file this repository consists of the following files:
+
+1. `config.py`: Configuration files for training the model;
+1. `model.py`: Actor and Critc Network classes;
+1. `ddpg_agent.py`: Agent, ReplayBuffer and OUNoise classes; The Agent class makes use of the Actor and Critic classes from `model.py`, the ReplayBuffer class and the OUNoise class;
+1. `multi_agents.py`: MultiAgent class defining multiple agents based on the `Agent` class
+1. `run.py`: Script which will train the agent. Can be run directly from the terminal.
+1. `checkpoint_[01].actor.pth`: Contains the weights of successful Actor Networks
+1. `checkpoint_[01]critic.pth`: Contains the weights of successful Critic Networks
+
+Todos:
+1. `report.ipynb`: As an alternative to the `run.py` script this Jupyter Notebook has a step-by-step structure. Here the learning algorithm is described in detail
+1. Improve plots
+1. Add more screen outputs during the training to better monitor the learning
+
