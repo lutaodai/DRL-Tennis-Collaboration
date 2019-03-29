@@ -1,7 +1,7 @@
 [//]: # (Image References)
 
 [image1]: https://user-images.githubusercontent.com/15965062/47237461-d2a90b00-d3e7-11e8-96a0-f0c9a0b7ad1d.png "Algorithm"
-[image2]: https://user-images.githubusercontent.com/15965062/47818424-a171f880-dd60-11e8-8885-c331b33597bd.png "Plot of Rewards"
+[image2]: https://raw.githubusercontent.com/lutaodai/DRL-Tennis-Collaboration/master/score.png "Plot of Rewards"
 
 # Report - Deep RL Project: Collaboration and Competition
 
@@ -72,7 +72,7 @@ numer of updates (per episode) | 4
     - See 'model.py' for more details.
     
 ### Training screen output
-```bash
+```
 Episode 100     Average Score: 0.02
 Episode 200     Average Score: 0.01
 Episode 300     Average Score: 0.04
@@ -90,14 +90,7 @@ Environment solved in 1170 episodes!    Average Score: 0.50
 
 ### Plot of results
 
-As seen below, the environment is solved after 1392 episodes (average 100 episodes > 0.5), and achieves best average score of above 0.85 in 1467 episodes.
-...
-...
-Episode: 1492   Avg: 0.512   BestAvg: 0.512   σ: 0.546  |  Tot. Steps: 59455   Secs: 1006      |  Buffer: 60947   NoiseW: 0.8781
-...
-...
-
-Solved in 1392 episodes!
+As seen below, the environment is solved after 1170 episodes (average 100 episodes > 0.5)
 
 ![Plot of Rewards][image2]
 
