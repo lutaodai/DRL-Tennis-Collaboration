@@ -5,7 +5,7 @@
 
 # Report - Deep RL Project: Collaboration and Competition
 
-This report is organized based on [Akhiad Bercovich](https://github.com/akhiadber/DeepRL-Tennis-Collab/blob/master/REPORT.md)'s work.
+This report is organized based on [Akhiad Bercovich](https://github.com/akhiadber/DeepRL-Tennis-Collab/blob/master/REPORT.md)'s report.
 
 ### Implementation Details
 
