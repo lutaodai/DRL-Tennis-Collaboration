@@ -73,13 +73,16 @@ Apart from the `Readme.md` file this repository consists of the following files:
 1. `config.py`: Configuration files for training the model;
 1. `model.py`: Actor and Critc Network classes;
 1. `ddpg_agent.py`: Agent, ReplayBuffer and OUNoise classes; The Agent class makes use of the Actor and Critic classes from `model.py`, the ReplayBuffer class and the OUNoise class;
-1. `multi_agents.py`: MultiAgent class defining multiple agents based on the `Agent` class
-1. `run.py`: Script which will train the agent. Can be run directly from the terminal.
-1. `checkpoint_[01].actor.pth`: Contains the weights of successful Actor Networks
-1. `checkpoint_[01]critic.pth`: Contains the weights of successful Critic Networks
+1. `multi_agents.py`: MultiAgent class defining multiple agents based on the `Agent` class;
+1. `run.py`: Script which will train the agent. Can be run directly from the terminal;
+1. `checkpoint_[01].actor.pth`: Contains the weights of successful Actor Networks;
+1. `checkpoint_[01].critic.pth`: Contains the weights of successful Critic Networks.
 
 Todos:
-1. `report.ipynb`: As an alternative to the `run.py` script this Jupyter Notebook has a step-by-step structure. Here the learning algorithm is described in detail
-1. Improve plots
-1. Add more screen outputs during the training to better monitor the learning
+1. `report.ipynb`: As an alternative to the `run.py` script this Jupyter Notebook has a step-by-step structure. Here the learning algorithm is described in detail;
+1. Improve plots;
+1. Add more screen outputs during the training to better monitor the learning;
+1. Add specific dirs for saving plots and model weights;
+1. Add functions of loading weights and resume training;
+1. Add gif visualizing the performance of the trained model;
 
